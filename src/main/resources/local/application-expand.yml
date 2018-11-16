@@ -1,0 +1,30 @@
+activeEnvironment: eric(localhost)
+#profile: expand_envrimont
+#ms.endpoint: http://14.18.22.5:8015/Service/UiService_APP.asmx
+#ms.endpoint: https://acsappslb.aihsh.cn:8015/Service/UiService_APP.asmx
+#temppath: /mnt/temp/
+#defaultPassword: 111111
+spring:
+#  redis:
+#    database: 1
+#    host: 127.0.0.1
+#    port: 6379
+#    password: hopson_@66_life
+#    max-idle: 8
+#    min-idle: 0
+#    max-active: 8
+#    max-wait: -1
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/eric?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+#      filters: log4j
+#      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#      useGlobalDataSourceStat: true

@@ -1,0 +1,103 @@
+activeEnvironment: hopson(prod)
+profile: expand_envrimont
+ms.endpoint: https://acsappslb.aihsh.cn:8015/Service/UiService_APP.asmx
+temppath: /mnt/temp/
+defaultPassword: 111111
+spring:
+  redis:
+    database: 0
+    host: redis.host
+    password: hopson_@66_life
+    port: 6379
+    max-idle: 8
+    min-idle: 0
+    max-active: 8
+    max-wait: -1
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://rds8i4u7wln17s1j35h9.mysql.rds.aliyuncs.com:3306/heshenghuo?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+      username: hshuat
+      password: 123QWE1qaz
+      initialSize: 5
+      minIdle: 5
+      maxActive: 10
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      filters: stat,wall,log4j
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      useGlobalDataSourceStat: true
+  ## 配置的地址 ##
+webInfo:
+  QR_code_url: http://dg.aihsh.cn:9090/static/sweepDoor/qrcode.html
+  file_url: http://file.aihsh.cn
+  other_file_url: http://cimg.aihsh.cn
+  ## 催收二维码
+  collection_QR_code_url: http://dg.aihsh.cn:9090/static/billQr
+ms:
+  endpoint: https://acsappslb.aihsh.cn:8015/Service/UiService_APP.asmx
+  uatorpro: PRO
+wx:
+  secret: ca29180169d46c96c0305bee9a782397
+  template.id: DlKnGYvIwJqf3UuPEgX1xL7GxsBUAanKGiHCf4j4V6s
+  appId: wxe32f0e7d57636b52
+##system.url: PRO
+  system.url: PRO
+sms:
+  uatorpro: PRO
+lr:
+  appid: 00A9ADCEB4
+  key: 7c344c58ee3864d522fd38397ada7b45
+  url: http://39.106.132.211:8005
+  prefix: PRO
+  accountCode: wy
+hsh:
+  key: 8c394a58ge4864d022dd38097aer7b4o
+  merchantId: 03A9ADCMB4LR
+es:
+  index: door_type_bycommunity
+  type: door_type_bycommunity
+env:
+  data: PRO
+fees:
+  url: http://59.110.136.86:7079
+ws:
+  areaDoorUrl: https://acsappslb.aihsh.cn:8015/Service/UiService_APP.asmx
+jeez:
+  endpoint: https://jeezmain.aihsh.cn:8082/JeezWeb/JeezExternalDataService.asmx?wsdl
+php:
+  url: http://cmobile.aihsh.cn
+cash:
+  dealjeezurl: http://47.95.255.99:7071/v1/api-fees/front/interface/cash/dealJizhiPay
+  urgeurl: http://47.95.255.99:7071/v1/api-fees/front/interface/cash/getCollectionBill
+  fakeurl: http://cashhopson.com
+callElevator:
+  url: https://acsappslb.aihsh.cn:8015/Service/UiService_APP.asmx
+door:
+  distance: 1000
+package:
+  category:
+    id: 644
+
+
+shop:
+  id: 988
+  name: 合生活精装修店
+  phone: 13260307882
+
+
+imgServer:
+       url: http://file.aihsh.cn/
+
+#模板文件url
+templateFile:
+       url: http://filetest.aihsh.cn:9000/group1/M00/00/74/rBD4BFt9CvKAVqGOAAAi94A0fYA56.xlsx
+
+#ecardPay
+ecardPay:
+      preURL: https://hezhifupay.aihsh.cn:8080/gateway
+      secret: FE8631BA05F5B0568C718C027420A9E4
+      giftFile: /usr/local/business/giftfile/
+      publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCXXmVj8vLIKvC1PjVTz9GLnkFdu570q2JOtSOzeTSE9pNEcECKPrumURCee+cTT5fkTV0ixNO+LedIUtqlpUeekWF4CEtSsB479+qtbdeepyloFPvrj5lQziogkh9YBUNkq1fn+tnIO+OvElqJw9oq4nwrHj6GzavaQLgyJ2H1ywIDAQAB
+      privateKey: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKt5UgTF5n7UDY2jI/+p9HH11hDK+U2tTR3jxVNgZS6QUh71ykJTtAYSy7uP8zm7acklsrFEWCMFHXWoyn6f5we21zxMZjfAYvOdZAaKIJveqDUQdKS4qI4Q0ZzNmowT8/oNjzHlMQOuJioYAGVBWhBTnLzsBy7o1PkZqXaU+GnNAgMBAAECgYEAnhlAxwfUajGHwYSeZ1ZC/GOmmFscm0Li7GEaibJB+Dm2jbcfYiIcxNDFqUyi/CLQ+VXZuNmDzd4keFxFP5SdBBxkfqYoE+w2aKqOyD4uAHsKqbfm3ccm1x+xL0WfVq9BK4l9wzzvNckArNmZuCSB/BSAH2s7jmrV8KqnE4hvPMECQQDVYnAQjCThpdRAf8qI+3/5HZ1SW5m1uoEVXIqClB2KHlOfmrYeaRcuiEtOweN39Qtb2k5WWkTZO547NKyWW1G9AkEAzbgl0tjzXopUahdP9788Wn5iOy/XgZ7JMp4F7D+fAetDHpWO4GpBuw0ArIi/O/UfYIf6qftabq9f/ikC654RUQJARjo0ia2mAcGy/ltQjA7BynotqcpN51pvW1lumJUot6lNekzPvWh24bCnoE79jyBN0bgiahcha6FMbU3js0RwvQJBAMqv4/xhKy/7xP4eZ/jmX5WdrjU4hvG8O+n2TkmdyZG/dYsduf8cUhT007Qqq5hsg/S9JVjzQP+LJV4qlCkHvXECQDHMNCIK42wClGvFFocUd7nD7OOMucIPGW0nU2fRwVVCLWRQqSVMXFoMj398Tqb5QClYzbzzG/iWhxy47ayU334=
+      partner: 100000023500342

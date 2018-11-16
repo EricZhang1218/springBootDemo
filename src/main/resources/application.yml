@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: expand
+
+mybatis:
+  mapperLocations: classpath:/mapper/*/*.xml
+  typeAliasesPackage: com.eric.demo.*.db
+  configuration:
+    call-setters-on-nulls: true
+server:
+  port: 8081
+
+
+#  spring:
+#   datasource:
+#      type: com.alibaba.druid.pool.DruidDataSource
+#      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://localhost:3306/eric?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+#      username: root
+#      password: 123456

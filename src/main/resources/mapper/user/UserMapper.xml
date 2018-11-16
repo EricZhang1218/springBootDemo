@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eric.demo.mapper.user.UserMapper">
+    <resultMap id="BaseResultMap" type="com.eric.demo.db.user.User">
+        <result column="name" property="name" />
+        <result column="sex" property="sex" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        name,sex
+    </sql>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from user
+    </select>
+
+    <select id="findByName" resultMap="BaseResultMap">
+        select * from user where 1=1 <if test="name != null and name != ''"> and  name = #{name}</if>
+    </select>
+
+    <select id="pageQuery" resultMap="BaseResultMap" parameterType="com.eric.demo.db.search.UserSearch">
+        select <include refid="Base_Column_List"/> from user where 1=1
+        <if test="name != null and name != ''">and  name = #{name} </if>
+        <if test="sex != null">and sex = #{sex}</if>
+        limit #{begin}, #{pageSize}
+    </select>
+    <select id="count" resultType="int" parameterType="com.eric.demo.db.search.UserSearch">
+        select count(*) from user where 1=1
+        <if test="name != null and name != ''">and  name = #{name} </if>
+        <if test="sex != null">and sex = #{sex}</if>
+    </select>
+</mapper>
