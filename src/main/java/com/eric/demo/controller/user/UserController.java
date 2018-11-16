@@ -28,7 +28,7 @@ public class UserController extends BaseController {
 
     public static Logger logger= LoggerFactory.getLogger(UserController.class);
 
-    @ApiImplicitParam(name = "param", value = "查询条件", required = true, dataType = "String", paramType = "query")
+    @ApiImplicitParam(name = "param", value = "查询条件{}", required = true, dataType = "String", paramType = "query")
     @PostMapping("list")
     public Map<String,Object> list(String param){
         try {
